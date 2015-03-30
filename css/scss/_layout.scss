@@ -1,0 +1,28 @@
+html {
+	height: 100%;
+	font-size: 62.5%;
+}
+
+body {
+	height: 100%;
+	background: #FFF;
+	color: #646363;
+	@include font-size(15);
+	line-height: 1.5;
+	@include neff;
+	@include transition(all 0.3s ease);
+}
+
+#tortilla {
+	margin: 0 auto;
+	max-width: 810px;
+}
+
+/* =============================================================================
+   Header Layout
+   ========================================================================== */
+
+#content {
+	padding: 17px 176px 65px;
+	position: relative;
+}

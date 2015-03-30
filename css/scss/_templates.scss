@@ -1,0 +1,308 @@
+#front-page {
+	background: url(../images/backgrounds/canvas.jpg) left top repeat;	
+
+	#header {
+		height: 288px;
+		background: url(../images/backgrounds/header.jpg) center top no-repeat;
+		text-align: center;
+		@include box-shadow(0px 0px 21px #5F5B5B);
+
+		.site-title {
+			background: #fff;
+			display: inline-block;
+			font-weight: 100;
+			@include font-size(82);
+			padding: 10px 110px 28px;
+			margin: 62px 0;
+			line-height: 1;		
+			color: $red;
+
+			&:after {
+				@include icon(separator);
+				@include font-size(18);
+				display: block;	
+				color: $gray;			
+			}	
+		}
+	}
+
+	#cook-list {
+		@extend .clearfix;
+		padding: 40px 50px 0px;
+
+		li {
+			  width: 30%;
+			  float: left;
+			  margin: 1.6%;
+
+			&:nth-child(2) {
+				@include transform(rotate(-2deg));
+			  	margin-top: 4px;
+			}			
+
+			&:last-child {
+				@include transform(rotate(1deg));
+			}
+
+			a {
+				position: relative;
+				display: block;
+
+				.recipe-image {
+					display: block;
+				}
+
+				.cook-name {
+					position: absolute;
+					@include windsor;
+					left: 0;
+					bottom: 10px;
+					@include font-size(40);
+					color: $red;
+					padding: 5px 20px 10px;
+					background: #FFF;
+					line-height: 0.7;
+					@include transition(all 0.3s ease);
+
+					&:after {
+						@include icon(play);
+						@include font-size(20);
+						vertical-align: middle;
+					}
+				}
+
+				&:hover {
+
+					.cook-name {
+						background: $red;
+						color: #fff;						
+					}
+				}				
+			}
+		}
+	}
+
+	#content {
+
+		&:before {
+			@include icon(saltandpeppa);
+			position: absolute;
+			left: 3%;
+			@include font-size(113);	
+			top: 50%;		
+		}
+
+		&:after {
+			@include icon(gloves);
+			position: absolute;
+			right: 20px;
+			@include font-size(113);	
+			top: 130px;	
+			@include transform(rotate(15deg));
+		}
+
+		.primary-btn {
+			position: absolute;
+			right: 3%;
+			bottom: 13%;
+		}
+	}
+}
+
+#cookaholic {
+	background: url(../images/backgrounds/wooden.jpg) left top repeat;
+
+	.title {
+		position: absolute;
+		left: 0;
+		top: 85px;
+		background: #fff;
+		text-align: center;
+		width: 425px;
+		padding: 10px 0 30px;
+		z-index: 2;
+
+		h1 {
+			@include font-size(90);
+			line-height: .3;
+			letter-spacing: 1px;
+
+			&:after {
+				@include icon(separator);
+				@include font-size(11);
+				display: block;	
+				color: $gray;	
+				margin-top: 3em;		
+			}			
+		}
+
+		h2 {
+			@include font-size(60);
+			color: #58595b;
+		}
+	}
+
+	.featured-image {
+		margin: 68px 0 0 330px;
+		@include transform(rotate(3deg));
+		position: relative;
+		z-index: 1;		
+	}
+
+	.details {
+		background: #FFF;
+		width: 590px;
+		margin: 0 auto;
+		padding: 30px 15px 15px;
+		@include transform(rotate(-1deg));
+		@extend .clearfix;
+		margin-bottom: 4em;
+
+		.recipe-image {
+			float: left;
+			@include transform(rotate(-1deg));
+			margin-right: 35px;
+		}
+
+		.list {
+			@include transform(rotate(1deg));
+
+			.item {
+				@include neff-light;
+				color: #414042;
+				@include font-size(14);
+
+				span {
+					color: $red;
+					@include neff;
+				}
+
+				&.margin {
+					margin-top: 10px;
+
+					span {
+						display: block;
+					}
+				}
+			}
+		}
+
+		.cookaholic-peter-sidwell & {
+			&:before {
+				@include icon(saucepan);
+				position: absolute;
+				right: -80px;
+				@include font-size(89);	
+				top: 11px;		
+				@include transform(rotate(-5deg));			
+			}
+		}
+
+		.cookaholic-andrea-simmons & {
+			&:before {
+				@include icon(rollpin);
+				position: absolute;
+				right: -80px;
+				@include font-size(69);	
+				top: 11px;		
+				@include transform(rotate(-5deg));			
+			}
+		}
+
+		.cookaholic-sophie-jonas-hill & {
+			&:before {
+				@include icon(strainer);
+				position: absolute;
+				right: -43px;
+				@include font-size(99);	
+				top: 41px;	
+				@include transform(rotate(-5deg));			
+			}
+		}		
+
+	}
+
+	#content {
+		background: url(../images/backgrounds/stone.jpg) left top repeat;	
+		padding: 37px 162px 26px;
+
+		p {
+			color: #fff;
+		}	
+
+		article {
+			position: relative;
+		}
+
+		.page-content {
+			&:after {
+				@include icon(whisker);
+				@include font-size(80);							
+				color: #fff;
+				display: block;
+				width: 100%;
+				text-align: center;				
+			}
+		}
+	} 
+}
+
+#form {
+	position: relative;
+	background: url(../images/backgrounds/form.jpg) left top repeat;	
+	padding: 100px 95px 50px;
+
+	.back-btn {
+		color: $red;
+		top: 0px;
+		left: 33px;
+		height: 65px;
+	}
+
+	.inner {
+		background: #FFF;
+
+		&:before {
+			content: '';
+			background: url(../images/backgrounds/form-top.png) left top repeat;	
+			height: 17px;
+			display: block;
+			top: -17px;
+			left: 0;
+			position: absolute;
+			width: 100%;
+		}	
+		
+		&:after {
+			content: '';
+			background: url(../images/backgrounds/form-bottom.png) left top repeat;	
+			height: 29px;
+			display: block;
+			bottom: -29px;
+			left: 0;
+			position: absolute;
+			width: 100%;
+		}						
+
+		#content {
+			padding: 10px 68px 40px;
+
+			&:before {
+				@include icon(baguette);
+				position: absolute;
+				right: -69px;
+				@include font-size(69);	
+				top: 69%;	
+				@include transform(rotate(20deg));
+			}	
+
+			&:after {
+				@include icon(onion);
+				position: absolute;
+				right: 10px;
+				@include font-size(69);	
+				top: 79%;	
+			}							
+		}
+	}
+}

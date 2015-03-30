@@ -1,0 +1,277 @@
+/* 
+ *  Core Owl Carousel CSS File
+ */
+.owl-carousel {
+	display: none;
+	width: 100%;
+	-webkit-tap-highlight-color: transparent;
+	/* position relative and z-index fix webkit rendering fonts issue */
+	position: relative;
+	z-index: 1;
+	
+	.owl-stage {
+		position: relative;
+		-ms-touch-action: pan-Y;
+	}
+
+	.owl-stage:after {
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+	}
+
+	.owl-stage-outer {
+		position: relative;
+		overflow: hidden;
+		/* fix for flashing background */
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	
+	.owl-item {
+		position: relative;
+		min-height: 1px;
+		float: left;
+		-webkit-backface-visibility: hidden;
+		-webkit-tap-highlight-color: transparent;
+		-webkit-touch-callout: none;
+		max-width: 100%;
+	}
+	.owl-item img {
+		-webkit-transform-style: preserve-3d;
+	}
+	
+	.owl-nav.disabled,
+	.owl-dots.disabled {
+		display: none;
+	}
+
+	.owl-nav .owl-prev,
+	.owl-nav .owl-next,
+	.owl-dot {
+		cursor: pointer;
+		cursor: hand;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	&.owl-loaded {
+		display: block;
+	}
+
+	&.owl-loading {
+		opacity: 0;
+		display: block;
+	}
+
+	&.owl-hidden {
+		opacity: 0;
+	}
+
+	&.owl-refresh .owl-item {
+		display: none;
+	}
+	
+	&.owl-drag .owl-item {
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	&.owl-grab {
+		cursor: move;
+		cursor: -webkit-grab;
+		cursor: -o-grab;
+		cursor: -ms-grab;
+		cursor: grab;
+	}
+
+	&.owl-rtl {
+		direction: rtl;
+	}
+
+	&.owl-rtl .owl-item {
+		float: right;
+	}
+}
+
+/* No Js */
+.no-js .owl-carousel {
+	display: block;
+}
+
+
+/* 
+ *  Owl Carousel - Animate Plugin
+ */
+.owl-carousel{
+	.animated {
+		-webkit-animation-duration: 1000ms;
+		animation-duration: 1000ms;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+	}
+	.owl-animated-in {
+		z-index: 0;
+	}
+	.owl-animated-out {
+		z-index: 1;
+	}
+	.fadeOut {
+		@include animate-prefixer(animation-name, fadeOut);
+	}
+
+	.fadeIn {
+		@include animate-prefixer(animation-name, fadeIn);
+	}	
+}
+
+@include animate-keyframe(fadeOut) {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@include animate-keyframe(fadeIn) {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+/* 
+ *  Owl Carousel - Auto Height Plugin
+ */
+
+.owl-height {
+	@include transition(height, 500ms, ease-in-out)
+}
+
+/* 
+ *  Owl Carousel - Lazy Load Plugin
+ */
+
+.owl-carousel {
+	.owl-item {
+		.owl-lazy {
+			opacity: 0;
+			@include transition(opacity, 400ms, ease);
+		}
+		img{
+			transform-style: preserve-3d;
+		}
+	}
+}
+
+
+
+
+/* 
+ *  Owl Carousel - Custom Nav
+ */
+
+.owl-nav {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin-top: -(58px / 2);
+
+	@include device-width(6) {
+		display: none;
+	}
+	
+	.owl-prev,
+	.owl-next {
+		top: 0;
+		display: block;
+		position: absolute;
+		z-index: 10;
+		cursor: pointer;
+		opacity: 1;
+		@include transition(all .3s ease);
+		background: #FFF;
+		color: #000;
+		padding: 1.7em 2em;
+		line-height: 7em;
+		text-align: center;
+		@include font-size(10);
+		letter-spacing: 2px;
+		@include neff;
+		vertical-align: middle;
+
+		&:before,
+		&:after {
+			display: inline-block;
+			text-align: center;
+			line-height: 1;
+			font-size: 7em;
+			vertical-align: middle;
+		}
+
+		&:hover {
+			background: #DBDBDB;
+			color: #FFF;
+		}
+	}
+		
+	.owl-next {
+		right: 0;
+		&:after {
+			@include icon(arrow-right);
+		}
+	}
+	
+	.owl-prev {
+		left: 0;
+
+		&:before {
+			@include icon(arrow-left);
+		}
+	}
+}
+
+/* 
+ *  Owl Carousel - Custom Nav
+ */
+
+.owl-dots {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	-webkit-tap-highlight-color: transparent;
+}
+.owl-dots .owl-dot {
+	display: inline-block;
+	zoom: 1;
+	padding: 1em 0.5em;
+	*display: inline;
+	vertical-align: bottom;
+}
+.owl-dots .owl-dot span {
+	width: 8px;
+	height: 8px;
+	background: #e8e8e8;
+	display: block;
+	-webkit-backface-visibility: visible;
+	@include border-radius(9999px);
+	@include transition(all 0.3s ease);
+
+	@include device-width(5) {
+		margin: 0.2em;
+	}
+}
+.owl-dots .owl-dot.active span, .owl-dots .owl-dot:hover span {
+	background: #646464;
+}

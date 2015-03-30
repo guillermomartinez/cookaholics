@@ -1,0 +1,126 @@
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+.unstyled-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	li {
+		margin: 8px 0;
+	}
+}
+
+
+/* =============================================================================
+   Table
+   ========================================================================== */
+
+table {
+
+ td {
+
+	}
+}
+
+
+/* =============================================================================
+   Custom
+   ========================================================================== */
+
+.overlay {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+	
+.vertical-line {
+	width: 1px;
+	height: 100%;
+	display: inline-block;
+	background: #BEBEBE;
+	vertical-align: middle;
+}
+
+
+blockquote {
+	padding: 0 15%;
+	position: relative;
+	margin: 1em 0;
+	@include neff;
+	text-align: center;
+	color: #000;
+	margin: 1.5em;
+	
+	&:before {
+		@include icon(quote);
+		color: #dcdcdc;
+	}
+
+	p {
+		margin: .5em !important;
+		font-size: 22px !important;
+		line-height: 1.3 !important;
+		text-align: center !important;
+	}
+}
+
+.circle {
+	@include border-radius(999px);
+	overflow: hidden;
+
+	img {
+		display: block;
+	}
+}
+
+.form-selector {
+	text-align: center;
+	margin: 15px;
+
+	.item {
+		width: 115px;
+		height: 115px;
+		display: block;
+		@include border-radius(999px);
+		@include inline-block;
+		position: relative;
+		margin: 2px;
+
+		&:after {
+			@include icon(circles);
+			@include font-size(120);
+			color: $red;
+			position: absolute;
+			left: -2px;
+			top: -2px;
+		}
+
+		&.active {
+			border: 5px solid $red;
+
+			&:after {
+		  		left: -8px;
+  				top: -7px;
+			}
+		}
+
+		&:first-child {
+			background: url(../images/misc/andrea.jpg) center center no-repeat;
+		}
+
+		&:nth-child(2) {
+			background: url(../images/misc/peter.jpg) center center no-repeat;
+		}		
+
+		&:last-child {
+			background: url(../images/misc/sophie.jpg) center center no-repeat;
+		}		
+	}
+}

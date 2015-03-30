@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'neff-light';
+    src: url('fonts/NeffSansLig-webfont.eot');
+    src: url('fonts/NeffSansLig-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/NeffSansLig-webfont.woff2') format('woff2'),
+         url('fonts/NeffSansLig-webfont.woff') format('woff'),
+         url('fonts/NeffSansLig-webfont.ttf') format('truetype'),
+         url('fonts/NeffSansLig-webfont.svg#neff_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'neff';
+    src: url('fonts/NeffSansReg-webfont.eot');
+    src: url('fonts/NeffSansReg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/NeffSansReg-webfont.woff2') format('woff2'),
+         url('fonts/NeffSansReg-webfont.woff') format('woff'),
+         url('fonts/NeffSansReg-webfont.ttf') format('truetype'),
+         url('fonts/NeffSansReg-webfont.svg#neff_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'windsor';
+    src: url('fonts/Windsor-DemiBold-webfont.eot');
+    src: url('fonts/Windsor-DemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Windsor-DemiBold-webfont.woff2') format('woff2'),
+         url('fonts/Windsor-DemiBold-webfont.woff') format('woff'),
+         url('fonts/Windsor-DemiBold-webfont.ttf') format('truetype'),
+         url('fonts/Windsor-DemiBold-webfont.svg#windsordemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@mixin arial {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.arial {
+	@include arial;
+}
+
+@mixin neff {
+	font-family: 'neff';
+	font-style: normal;
+    font-weight: 100;
+}
+
+.neff {
+	@include neff;
+}
+
+@mixin neff-light {
+	font-family: 'neff-light';
+	font-style: normal;
+    font-weight: 100;
+}
+
+.neff-light {
+	@include neff-light;
+}
+
+
+@mixin windsor {
+	font-family: 'windsor';
+	font-style: normal;
+    letter-spacing: 1px;
+}
+
+.windsor {
+	@include windsor;
+}
