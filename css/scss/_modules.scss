@@ -111,6 +111,16 @@ blockquote {
 			}
 		}
 
+		&:hover {
+			border: 5px solid $red;
+
+			&:after {
+		  		left: -8px;
+  				top: -7px;
+			}
+		}
+
+
 		&:first-child {
 			background: url(../images/misc/andrea.jpg) center center no-repeat;
 		}

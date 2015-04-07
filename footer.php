@@ -17,5 +17,13 @@
 
 <?php wp_footer(); ?>
 
+<div id="fb-root"></div>
+	<script type="text/javascript" src="https://connect.facebook.net/en_US/all.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		FB.init();
+		FB.Canvas.setAutoGrow();
+		FB.Canvas.setAutoGrow(false);
+	</script> 
+
 </body>
 </html>

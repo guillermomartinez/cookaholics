@@ -1039,7 +1039,8 @@ fieldset {
   text-align: center; }
 
 .gform_heading {
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 2.5em; }
   .gform_heading .gform_title {
     margin: 0.2em 0 .5em;
     font-size: 85px;
