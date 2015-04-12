@@ -159,7 +159,7 @@ fieldset {
 	margin-bottom: 2.5em;	
 
 	.gform_title {
-		margin: 0.2em 0 .5em;
+		margin: 0.2em 0 0em;
 		@include font-size(85);
 
 		&:after {
@@ -168,6 +168,10 @@ fieldset {
 			display: block;	
 			color: $gray;			
 		}	
+	}
+
+	.gform_name {
+		@include font-size(50);
 	}
 
 	.gform_description {

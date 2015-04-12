@@ -18,12 +18,25 @@
 <?php wp_footer(); ?>
 
 <div id="fb-root"></div>
-	<script type="text/javascript" src="https://connect.facebook.net/en_US/all.js"></script>
-	<script type="text/javascript" charset="utf-8">
-		FB.init();
-		FB.Canvas.setAutoGrow();
-		FB.Canvas.setAutoGrow(false);
-	</script> 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '307567669413430',
+      status     : true,
+      xfbml      : true
+    });
+    FB.Canvas.setAutoGrow();
+    FB.Canvas.setAutoGrow(false);
+  };
+ 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>	
 
 </body>
 </html>
