@@ -4,7 +4,7 @@ Template Name: Form
 */?>
 <?php get_header(); ?>
 <div id="form">
-	<a class="back-btn" href="" onclick="history.back();"><?php _e('Back'); ?></a>
+	<a class="back-btn" href="" onclick="window.history.back();"><?php _e('Back'); ?></a>
 	<div class="inner container">
 		<?php while ( have_posts() ) : the_post(); ?>
 		<div id="content">

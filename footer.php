@@ -25,7 +25,7 @@
       status     : true,
       xfbml      : true
     });
-    FB.Canvas.setAutoGrow();
+    FB.Canvas.setAutoGrow(500);
     FB.Canvas.setAutoGrow(false);
   };
  

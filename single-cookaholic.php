@@ -67,7 +67,7 @@
 				<div class="page-content">
 					<?php the_content(); ?>
 				</div>
-				<a class="back-btn" href="" onclick="history.back();"><?php _e('Back'); ?></a>		
+				<a class="back-btn" href="" onclick="window.history.back();"><?php _e('Back'); ?></a>		
 				<?php if( is_singular('cookaholic') ) { ?>
 					<?php next_post_link( '%link', 'Next Expert' ) ?>
 				<?php } ?>					

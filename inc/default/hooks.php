@@ -4,7 +4,7 @@
 
 add_action('tiny_mce_before_init', 'custom_tinymce_options'); 
 
-add_action('gform_enqueue_scripts', 'custom_gform_enqueue_scripts', 10, 2);
+//add_action('gform_enqueue_scripts', 'custom_gform_enqueue_scripts', 10, 2);
 
 add_action('gform_field_standard_settings', 'custom_gform_standard_settings', 10, 2);
 
